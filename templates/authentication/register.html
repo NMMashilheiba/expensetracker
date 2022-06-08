@@ -5,58 +5,59 @@
     
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        
-            <div class="card mt-5">
-                <h4 class="card-header">Register account</h4>
-                <div class="card-body">
-                    <form action="" method="post">
-                        <div class ="form-group">
-                            <input 
-                                type="text"
-                                name="username"
-                                placeholder="Username"
-                                class="form-control form-control-sm"
-                                id="usernameField" 
-                            />
-                        </div>
-                        <div class="invalid_feedback invalid-feedback" style="display:none">
-                            
-                        </div>
-                        <p class="text-sm text-success usernameSuccessOutput"></p>
-                        <br/>
-                        <div class="form-group">
-                            <input 
-                            type="email"
-                            name="email"
-                            placeholder="Email"
+        <div class="card mt-5">
+            <h4 class="card-header">Register account</h4>
+            <div class="card-body">
+                <form action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
+                    {% include 'partials/_messages.html' %}
+                    
+                    <div class ="form-group">
+                        <input 
+                            type="text"
+                            name="username"
+                            placeholder="Username"
                             class="form-control form-control-sm"
-                            id="emailField" 
+                            id="usernameField" 
                         />
-                        </div>
-                        <div class="emailFeedbackArea invalid_feedback invalid-feedback" style="display:none">
-                            
-                        </div>
-                        <p class="text-sm text-success emailSuccessOutput"></p>
-                        <br/>
-                        <div class="form-group">
-                            <input 
-                            type="password"
-                            name="password"
-                            placeholder="Password"
-                            class="form-control form-control-sm"
-                            id="passwordField" 
-                        />
-                        </div>
-                        <small class="float-end pt-1">Show</small>
-                        <br/>
-                        <div class="d-grid gap-2 mt-3">
-                            <button class="btn btn-primary" type="submit" value="Register">Register</button>
-                        </div>
-                        <br/>
-                    </form>
-                </div>
+                    </div>
+                    <div class="invalid_feedback invalid-feedback" style="display:none">
+                        
+                    </div>
+                    <p class="text-sm text-success usernameSuccessOutput"></p>
+                    <br/>
+                    <div class="form-group">
+                        <input 
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        class="form-control form-control-sm"
+                        id="emailField" 
+                    />
+                    </div>
+                    <div class="emailFeedbackArea invalid_feedback invalid-feedback" style="display:none">
+                        
+                    </div>
+                    <p class="text-sm text-success emailSuccessOutput"></p>
+                    <br/>
+                    <div class="form-group">
+                        <input 
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        class="form-control form-control-sm"
+                        id="passwordField" 
+                    />
+                    </div>
+                    <small class="float-end pt-1 showPasswordToggle">Show</small>
+                    <br/>
+                    <div class="d-grid gap-2 mt-3">
+                        <button class="btn btn-primary" type="submit" value="Register">Register</button>
+                    </div>
+                    <br/>
+                </form>
             </div>
-        
+        </div>
     </div>
     <div class="col-md-4"></div>
 </div>
