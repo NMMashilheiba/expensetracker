@@ -4,12 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
+Django = "==3.0.4"
 psycopg2-binary = "*"
-psycopg2 = "*"
+psycopg2 = "==2.8.6"
 django-heroku = "*"
 gunicorn = "*"
-validate-email = "*"
+validate_email = "*"
+six = "*"
+django = "==4.0.5"
 
 [dev-packages]
 
