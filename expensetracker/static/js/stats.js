@@ -27,7 +27,9 @@ const renderChart = (data, labels) => {
             }]
         },
         options: {
+            responsive: true,
             plugins: {
+                maintainAspectRatio: true,
                 title: {
                     display: true,
                     text: 'Expenses per category'
